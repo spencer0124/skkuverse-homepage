@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const INAPP_REGEX =
-  /KAKAOTALK|kakaotalk|line\/|inapp|snapchat|instagram|everytimeapp|whatsApp|wadiz|FB_IAB|FB4A|FBAN|FBIOS|FBSS|DaumApps|kakaostory|band|twitter|TikTok/i;
+  /KAKAOTALK|kakaotalk|line\/|NAVER\(inapp|snapchat|instagram|everytimeapp|whatsApp|wadiz|FB_IAB|FB4A|FBAN|FBIOS|FBSS|DaumApps|kakaostory|band|twitter|TikTok/i;
 
 export default function InAppEscape() {
   const [escaping, setEscaping] = useState(false);

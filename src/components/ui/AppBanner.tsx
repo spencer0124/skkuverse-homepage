@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const INAPP_REGEX =
-  /KAKAOTALK|kakaotalk|line\/|inapp|snapchat|instagram|everytimeapp|whatsApp|wadiz|FB_IAB|FB4A|FBAN|FBIOS|FBSS|DaumApps|kakaostory|band|twitter|TikTok/i;
+  /KAKAOTALK|kakaotalk|line\/|NAVER\(inapp|snapchat|instagram|everytimeapp|whatsApp|wadiz|FB_IAB|FB4A|FBAN|FBIOS|FBSS|DaumApps|kakaostory|band|twitter|TikTok/i;
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6446813434";
 const PLAY_STORE_URL =
@@ -20,8 +20,11 @@ export default function AppBanner() {
     if (INAPP_REGEX.test(ua)) return;
 
     // Safari면 숨김 (네이티브 Smart Banner 사용)
+    // iOS에서 모든 브라우저가 WebKit 기반이라 UA에 Safari가 포함됨
+    // 실제 Safari만 판별하려면 3rd party 토큰이 없어야 함
     const isSafari =
-      /Safari/.test(ua) && !/Chrome|CriOS|FxiOS|EdgiOS/.test(ua);
+      /Safari/.test(ua) &&
+      !/Chrome|CriOS|FxiOS|EdgiOS|NAVER|naver|Whale|OPiOS|DuckDuckGo|GSA|YaBrowser/.test(ua);
     if (isSafari) return;
 
     // 세션 중 닫은 적 있으면 숨김
