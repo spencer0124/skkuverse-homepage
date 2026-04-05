@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "WantedSans";
+  src: url("../assets/fonts/WantedSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "WantedSans";
+  src: url("../assets/fonts/WantedSans-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "WantedSans";
+  src: url("../assets/fonts/WantedSans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors - Brand */
+  --color-brand: #1A8A5C;
+  --color-brand-light: #E8F5EE;
+
+  /* Colors - Grey Scale */
+  --color-grey-50: #F9FAFB;
+  --color-grey-100: #F2F4F6;
+  --color-grey-200: #E5E8EB;
+  --color-grey-300: #D1D6DB;
+  --color-grey-400: #B0B8C1;
+  --color-grey-500: #8B95A1;
+  --color-grey-600: #6B7684;
+  --color-grey-700: #4E5968;
+  --color-grey-800: #333D4B;
+  --color-grey-900: #191F28;
+
+  /* Colors - Blue */
+  --color-blue-50: #E8F3FF;
+  --color-blue-500: #3182F6;
+
+  /* Colors - Semantic */
+  --color-background: #ffffff;
+  --color-foreground: #191F28;
+
+  /* Font */
+  --font-sans: "WantedSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Font Size (SDS Typography) */
+  --font-size-t1: 30px;
+  --font-size-t1--line-height: 40px;
+  --font-size-t2: 26px;
+  --font-size-t2--line-height: 35px;
+  --font-size-t3: 22px;
+  --font-size-t3--line-height: 31px;
+  --font-size-t4: 20px;
+  --font-size-t4--line-height: 29px;
+  --font-size-t5: 17px;
+  --font-size-t5--line-height: 25.5px;
+  --font-size-t6: 15px;
+  --font-size-t6--line-height: 22.5px;
+  --font-size-t7: 13px;
+  --font-size-t7--line-height: 19.5px;
+
+  /* Desktop larger sizes */
+  --font-size-hero: 48px;
+  --font-size-hero--line-height: 60px;
+  --font-size-display: 40px;
+  --font-size-display--line-height: 52px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  word-break: keep-all;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
