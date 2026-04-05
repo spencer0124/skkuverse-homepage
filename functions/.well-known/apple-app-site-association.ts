@@ -1,10 +1,15 @@
-export const onRequest: PagesFunction = async () => {
+interface Env {
+  APPLE_TEAM_ID: string;
+  IOS_BUNDLE_ID: string;
+}
+
+export const onRequest: PagesFunction<Env> = async ({ env }) => {
   const aasa = {
     applinks: {
       apps: [],
       details: [
         {
-          appID: "<APPLE_TEAM_ID>.com.example.skkumap",
+          appID: `${env.APPLE_TEAM_ID}.${env.IOS_BUNDLE_ID}`,
           paths: [
             "NOT /",
             "NOT /privacy",

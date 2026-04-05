@@ -1,13 +1,19 @@
-export const onRequest: PagesFunction = async () => {
+interface Env {
+  ANDROID_PACKAGE_NAME: string;
+  ANDROID_SHA256_UPLOAD: string;
+  ANDROID_SHA256_SIGNING: string;
+}
+
+export const onRequest: PagesFunction<Env> = async ({ env }) => {
   const assetlinks = [
     {
       relation: ["delegate_permission/common.handle_all_urls"],
       target: {
         namespace: "android_app",
-        package_name: "com.zoyoong.skkubus",
+        package_name: env.ANDROID_PACKAGE_NAME,
         sha256_cert_fingerprints: [
-          "<EAS_UPLOAD_KEY_SHA256>",
-          "<GOOGLE_PLAY_APP_SIGNING_KEY_SHA256>",
+          env.ANDROID_SHA256_UPLOAD,
+          env.ANDROID_SHA256_SIGNING,
         ],
       },
     },
