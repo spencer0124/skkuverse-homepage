@@ -16,6 +16,7 @@ export const onRequest: PagesFunction<Env> = async ({ env }) => {
             "NOT /terms",
             "/bus/*",
             "/campus",
+            "/transit",
             "/map/*",
             "/search",
             "/notice/*",
