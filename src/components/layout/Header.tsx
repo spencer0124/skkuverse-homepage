@@ -27,19 +27,19 @@ export default function Header() {
         </a>
         <nav className="hidden md:flex items-center gap-8">
           <a
-            href="#features"
+            href="/#features"
             className="text-t6 font-medium text-grey-600 hover:text-grey-900 transition-colors"
           >
             기능 소개
           </a>
           <a
-            href="#community"
+            href="/#community"
             className="text-t6 font-medium text-grey-600 hover:text-grey-900 transition-colors"
           >
             커뮤니티
           </a>
           <a
-            href="#download"
+            href="/#download"
             className="text-t6 font-medium text-white bg-brand px-5 py-2.5 rounded-full hover:bg-brand/90 transition-colors"
           >
             앱 다운로드

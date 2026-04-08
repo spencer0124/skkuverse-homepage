@@ -40,22 +40,27 @@ export default function Footer() {
             <h4 className="text-t6 font-bold text-grey-800 mb-4">문의</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-t6 text-grey-500 hover:text-grey-700 transition-colors">
-                  인스타그램
+                <a href="/support" className="text-t6 text-grey-500 hover:text-grey-700 transition-colors">
+                  문의하기
                 </a>
               </li>
               <li>
-                <a href="#" className="text-t6 text-grey-500 hover:text-grey-700 transition-colors">
-                  이메일
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-t6 text-grey-500 hover:text-grey-700 transition-colors">
+                  인스타그램
                 </a>
               </li>
             </ul>
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-grey-200">
-          <p className="text-t7 text-grey-400">
-            &copy; 2025 스꾸버스. All rights reserved.
-          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p className="text-t7 text-grey-400">
+              &copy; 2025 스꾸버스. All rights reserved.
+            </p>
+            <a href="/privacy" className="text-t7 text-grey-400 hover:text-grey-600 transition-colors">
+              개인정보처리방침
+            </a>
+          </div>
         </div>
       </div>
     </footer>
